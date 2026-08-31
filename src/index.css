@@ -1,0 +1,33 @@
+:root {
+  /* Retro pixel type — logo, headings, UI chrome. Only weight 400 exists. */
+  --font-display: 'Press Start 2P', ui-monospace, monospace;
+  /* Interface text: buttons, labels, numbers. */
+  --font-ui: 'Roboto', system-ui, sans-serif;
+  /* Longer reading text: rules, chat, tooltips. */
+  --font-body: 'Open Sans', system-ui, sans-serif;
+  /* Anything meant to look printed on physical components — cards, tokens. */
+  --font-print: 'Jacquard 12', 'Times New Roman', serif;
+
+  font-family: var(--font-body);
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+button,
+input,
+select {
+  font-family: var(--font-ui);
+}

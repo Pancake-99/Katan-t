@@ -1,0 +1,30 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "katan-server",
+  "main": "src/index.js",
+  "compatibility_date": "2025-11-01",
+
+  // One Durable Object instance per lobby code. The instance IS the room:
+  // it holds the connected sockets and (later) the authoritative game state.
+  "durable_objects": {
+    "bindings": [{ "name": "LOBBY", "class_name": "LobbyRoom" }]
+  },
+
+  // `new_sqlite_classes` (not `new_classes`) is required for Durable Objects
+  // on the Workers free plan.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["LobbyRoom"] }],
+
+  // Run `npx wrangler d1 create katan` and paste the returned id below.
+  // Local dev works against a local SQLite file regardless of this value.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "katan",
+      "database_id": "PLACEHOLDER_RUN_WRANGLER_D1_CREATE",
+      "migrations_dir": "migrations"
+    }
+  ]
+
+  // Avatar uploads land here in the profile-images slice:
+  // "r2_buckets": [{ "binding": "AVATARS", "bucket_name": "katan-avatars" }]
+}

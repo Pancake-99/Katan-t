@@ -1,0 +1,28 @@
+{
+  "name": "katan",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "lint:fix": "oxlint --fix",
+    "dev:server": "wrangler dev --config server/wrangler.jsonc --port 8787",
+    "deploy:server": "wrangler deploy --config server/wrangler.jsonc"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "vite": "^8.2.2",
+    "wrangler": "^4.127.1"
+  },
+  "description": "A Catan-inspired online board game"
+}
