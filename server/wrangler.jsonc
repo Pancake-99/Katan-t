@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/wrangler/config-schema.json",
-  "name": "katan-server",
+  "name": "katan-t-server",
   "main": "src/index.js",
   "compatibility_date": "2025-11-01",
 
@@ -14,17 +14,17 @@
   // on the Workers free plan.
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["LobbyRoom"] }],
 
-  // Run `npx wrangler d1 create katan` and paste the returned id below.
+  // Run `npx wrangler d1 create katan-t` and paste the returned id below.
   // Local dev works against a local SQLite file regardless of this value.
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "katan",
+      "database_name": "katan-t",
       "database_id": "PLACEHOLDER_RUN_WRANGLER_D1_CREATE",
       "migrations_dir": "migrations"
     }
   ]
 
   // Avatar uploads land here in the profile-images slice:
-  // "r2_buckets": [{ "binding": "AVATARS", "bucket_name": "katan-avatars" }]
+  // "r2_buckets": [{ "binding": "AVATARS", "bucket_name": "katan-t-avatars" }]
 }

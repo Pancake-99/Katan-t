@@ -1,4 +1,4 @@
--- Katan initial schema (Cloudflare D1 / SQLite), normalised to 3NF.
+-- Katan'T initial schema (Cloudflare D1 / SQLite), normalised to 3NF.
 --
 -- Conventions used throughout:
 --   * Primary keys are UUID v4 stored as TEXT. SQLite has no UUID type.

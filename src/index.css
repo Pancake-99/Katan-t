@@ -8,13 +8,39 @@
   /* Anything meant to look printed on physical components — cards, tokens. */
   --font-print: 'Jacquard 12', 'Times New Roman', serif;
 
+  /* Medieval chrome. Parchment surfaces on leather, gold for earned things. */
+  --parchment: #f5e6c8;
+  --parchment-dim: #d8d2c2;
+  --leather: #5c4326;
+  --ink: #2b1d10;
+  --gold: #c17817;
+
+  /* Per-action accents, carried through from the mockups. */
+  --accent-create: #9a3324;
+  --accent-join: #2f7d32;
+  --accent-profile: #1864ab;
+  --accent-settings: #5f3dc4;
+
+  /* Board terrain. The six hex types. */
+  --terrain-pasture: #a0d762;
+  --terrain-mountains: #98a588;
+  --terrain-fields: #ffc857;
+  --terrain-hills: #b45f31;
+  --terrain-forest: #3a6f28;
+  --terrain-desert: #c4c082;
+
   font-family: var(--font-body);
-  color-scheme: light dark;
+  color-scheme: dark;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  background: var(--ink);
+}
+
+#root {
   min-height: 100vh;
 }
 

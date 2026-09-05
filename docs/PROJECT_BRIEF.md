@@ -1,11 +1,11 @@
-# Katan — Project Brief
+# Katan'T — Project Brief
 
 > Context handoff for a second Claude session managing the project's kanban/scrum board.
 > Written 2026-08-31. Reflects the repo at that date.
 
 ## What we're building
 
-**Katan** — a from-scratch online Catan clone, built to be played with friends.
+**Katan'T** — a from-scratch online Catan clone, built to be played with friends.
 
 The motivation is dissatisfaction with the existing Catan ports and alternatives online. The reference point is **colonist.io** (solid gameplay, weak presentation); the goal is to match its function while beating it on **UI polish, graphics, and feel**. Visual quality is a first-class requirement, not a finishing touch.
 
@@ -101,7 +101,7 @@ Tested against a local D1: eight invalid-write cases correctly rejected, and acc
 
 Also outstanding:
 - **Auth** — OAuth flows for Google and Discord, plus a sessions table (separate migration, no rework needed to `0001`). Needs the owner to register OAuth apps and supply credentials.
-- **Remote D1** — `database_id` in `server/wrangler.jsonc` is a placeholder. Needs `wrangler d1 create katan`. Local dev is unaffected.
+- **Remote D1** — `database_id` in `server/wrangler.jsonc` is a placeholder. Needs `wrangler d1 create katan-t`. Local dev is unaffected.
 - **R2 bucket + avatar upload path** — schema supports it, nothing built.
 - **Persistence wiring** — the Durable Object and D1 do not talk to each other yet; lobbies are entirely in-memory.
 - **Deployment** — nothing deployed. Vercel project not set up, Worker never deployed.
@@ -128,5 +128,5 @@ Rough dependency order: auth and lobby UX unblock most things; the game engine i
 - Working dir: `c:\Users\aleja\Katan-t`, branch `main`.
 - Only one commit so far (`Initial commit`); all the work above is **uncommitted**.
 - Local D1 is migrated and empty. Apply migrations with:
-  `npx wrangler d1 migrations apply katan --local --config server/wrangler.jsonc`
+  `npx wrangler d1 migrations apply katan-t --local --config server/wrangler.jsonc`
 - Windows gotcha: a backgrounded `wrangler dev` isn't killed by a shell `kill`; its `workerd` children keep file locks on the local D1. Kill the process tree via PowerShell before deleting `.wrangler` state.
